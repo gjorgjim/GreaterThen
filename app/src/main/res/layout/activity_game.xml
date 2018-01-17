@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.gjmarkov.greaterthen.GameActivity"
+  android:padding="16dp">
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Create new Game"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentTop="true"
+    android:textColor="@color/colorAccent"
+    android:background="@color/colorPrimary"
+    android:padding="8dp"
+    android:id="@+id/newGameBtn"/>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/newGameBtn"
+    android:text="Active Games:"
+    android:textSize="24sp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="16dp"
+    android:textColor="@android:color/black"
+    android:id="@+id/activeGamesTxtV"/>
+
+  <ListView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignEnd="@+id/newGameBtn"
+    android:layout_alignRight="@+id/newGameBtn"
+    android:layout_below="@+id/activeGamesTxtV"
+    android:paddingTop="16dp"
+    android:paddingBottom="48dp"
+    android:id="@+id/activeGames">
+
+  </ListView>
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:id="@+id/logOutBtn"
+    android:text="LOGOUT"
+    android:textColor="@color/colorAccent"
+    android:padding="8dp"
+    android:textSize="14sp"
+    android:background="@color/fui_transparent"/>
+
+</RelativeLayout>

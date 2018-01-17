@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "589392513047",
+    "firebase_url": "https://greaterthan-baea1.firebaseio.com",
+    "project_id": "greaterthan-baea1",
+    "storage_bucket": "greaterthan-baea1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589392513047:android:1556eb4c18cdfabd",
+        "android_client_info": {
+          "package_name": "com.gjmarkov.greaterthen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589392513047-k3d3a7an7l0upat93fg415n90tg9artg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gjmarkov.greaterthen",
+            "certificate_hash": "5d1234237f98e1c9e74b869aad1d04521acc4e63"
+          }
+        },
+        {
+          "client_id": "589392513047-mc7dgqur5kmu3qvlsgclrfcmh2jrbu52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVX7hL9I2iRzKtH7m_NQgu7lE2i1BSeOE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589392513047-mc7dgqur5kmu3qvlsgclrfcmh2jrbu52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
