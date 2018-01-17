@@ -144,7 +144,12 @@ public class GameActivity extends AppCompatActivity implements JoinGame {
       public void onChildAdded(DataSnapshot dataSnapshot, String s) {
         Log.d(TAG, "onChildAdded Called");
         Log.d(TAG, "Key: " + dataSnapshot.getKey());
-        if(firebaseService.getGame()==null) {
+        if(firebaseService.getGame()!=null) {
+          if(!firebaseService.getGame().getKey().equals(dataSnapshot.getKey())) {
+            games.add(new Game(dataSnapshot.getKey()));
+            adapter.notifyDataSetChanged();
+          }
+        } else {
           games.add(new Game(dataSnapshot.getKey()));
           adapter.notifyDataSetChanged();
         }

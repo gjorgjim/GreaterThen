@@ -29,8 +29,7 @@ public class PlayingAcitvity extends AppCompatActivity {
   private int myNumber = 0;
   private int otherNumber = 0;
 
-  private ValueEventListener creatorListener;
-  private ValueEventListener playerListener;
+  private ValueEventListener numberListener;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -60,22 +59,7 @@ public class PlayingAcitvity extends AppCompatActivity {
     });
   }
   private void listenForOtherPlayer() {
-    playerListener = new ValueEventListener() {
-      @Override
-      public void onDataChange(DataSnapshot dataSnapshot) {
-        otherNumber = dataSnapshot.getValue(Integer.class);
-        if(myNumber != 0 && otherNumber != 0) {
-          theWinnerIs();
-        }
-      }
-
-      @Override
-      public void onCancelled(DatabaseError databaseError) {
-
-      }
-    };
-
-    creatorListener = new ValueEventListener() {
+    numberListener = new ValueEventListener() {
       @Override
       public void onDataChange(DataSnapshot dataSnapshot) {
         otherNumber = dataSnapshot.getValue(Integer.class);
@@ -92,9 +76,9 @@ public class PlayingAcitvity extends AppCompatActivity {
 
     DatabaseReference gameRef = database.getReference("games").child(firebaseService.getGame().getKey());
     if(firebaseService.getRole().equals(FirebaseService.CREATOR)) {
-      gameRef.child(FirebaseService.PLAYER).child("number").addValueEventListener(playerListener);
+      gameRef.child(FirebaseService.PLAYER).child("number").addValueEventListener(numberListener);
     } else {
-      gameRef.child(FirebaseService.CREATOR).child("number").addValueEventListener(creatorListener);
+      gameRef.child(FirebaseService.CREATOR).child("number").addValueEventListener(numberListener);
     }
 
   }
@@ -132,9 +116,9 @@ public class PlayingAcitvity extends AppCompatActivity {
     DatabaseReference gameRef = database.getReference("games").child(firebaseService.getGame().getKey());
 
     if(firebaseService.getRole().equals(FirebaseService.CREATOR)) {
-      gameRef.child(FirebaseService.PLAYER).child("number").removeEventListener(playerListener);
+      gameRef.child(FirebaseService.PLAYER).child("number").removeEventListener(numberListener);
     } else {
-      gameRef.child(FirebaseService.CREATOR).child("number").removeEventListener(creatorListener);
+      gameRef.child(FirebaseService.CREATOR).child("number").removeEventListener(numberListener);
     }
   }
 
